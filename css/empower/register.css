@@ -248,6 +248,12 @@ header .header-title {
   font-size: 3.6vw;
 }
 
+.register .register-explain .protocol {
+    margin-left: 6vw;
+    position: relative;
+    float: left;
+}
+
 .register .register-explain #checkbox {
   position: relative;
   float: left;
@@ -266,9 +272,7 @@ header .header-title {
   justify-content: center;
   -webkit-box-pack: center;
   -webkit-justify-content: flex-start;
-  height: 100%;    margin-left: 6vw;
-  position: relative;
-  float: left;
+  height: 100%;
 }
 
 

@@ -136,11 +136,11 @@ header .header-title {
   color: #999;
 }
 
-.information-list {
+.ullist {
   margin: 5.33333vw auto;
 }
 
-.information-list ul li {
+.ullist ul li {
   height: 17.33333vw;
   background: #fff;
   margin-top: 3.33333vw;
@@ -149,19 +149,19 @@ header .header-title {
   padding-right: 5.33333vw;
 }
 
-.information-list ul li .icon {
+.ullist ul li .icon {
   width: 10.66667vw;
   height: 10.66667vw;
   float: left;
   margin-top: 3.33333vw;
 }
 
-.information-list ul li .item-box {
+.ullist ul li .box {
   float: left;
   margin-top: 0.66667vw;
 }
 
-.information-list ul li .item-box .item-title {
+.ullist ul li .box .title {
   display: inline-block;
   padding-left: 2vw;
   font-size: 4.26667vw;
@@ -169,21 +169,21 @@ header .header-title {
   margin-top: 4vw;
 }
 
-.information-list ul li .item-box .item-list-text {
+.ullist ul li .box .list-text {
   padding-left: 2vw;
   margin-top: 0.66667vw;
   font-size: 3.2vw;
   color: #a7a7a7;
 }
 
-.information-list ul li .status {
+.ullist ul li .status {
   float: right;
   font-size: 3.73333vw;
   margin-top: 6.66667vw;
   margin-right: 3.46667vw;
 }
 
-.information-list ul li .more {
+.ullist ul li .more {
   float: right;
   margin-top: 6.66667vw;
   width: 2.13333vw;

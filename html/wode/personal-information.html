@@ -17,166 +17,203 @@
   <div class="content">
     <div class="message">
       <img class="border" src="../../image/wode/border.png">
-      <div class="message-text">
-        <span class="required">必填</span>
-        <p class="full">请完整填写以下信息</p>
-      </div>
+      <span class="required">必填</span>
+      <p class="full">请完整填写以下信息</p>
     </div>
-    <div class="information-list">
-      <ul class="content-list">
+    <div class="ullist">
+      <ul>
         <li id="step-1">
           <img class="icon" src="../../image/wode/autonym.png">
-          <div class="item-box">
-            <h5 class="item-title">实名认证</h5>
-            <p class="item-list-text">身份信息认证</p>
+          <div class="box">
+            <h5 class="title">实名认证</h5>
+            <p class="list-text">身份信息认证</p>
           </div>
-          <div class="item-message">
-            <img class="more" src="../../image/wode/more.png">
-            <span class="status" id="flag-1">待认证</span>
-          </div>
+          <img class="more" src="../../image/wode/more.png">
+          <span class="status" id="flag-1">待认证</span>
         </li>
         <li id="step-2">
           <img class="icon" src="../../image/wode/communication.png">
-          <div class="item-box">
-            <h5 class="item-title">上传通讯录</h5>
-            <p class="item-list-text">个人通信录信息</p>
+          <div class="box">
+            <h5 class="title">上传通讯录</h5>
+            <p class="list-text">个人通信录信息</p>
           </div>
-          <div class="item-message">
-            <img class="more" src="../../image/wode/more.png">
-            <span class="status" id="flag-2">待认证</span>
-          </div>
+          <img class="more" src="../../image/wode/more.png">
+          <span class="status" id="flag-2">待认证</span>
         </li>
         <li id="step-3">
           <img class="icon" src="../../image/wode/credit.png">
-          <div class="item-box">
-            <h5 class="item-title">芝麻信用认证</h5>
-            <p class="item-list-text">芝麻积分</p>
+          <div class="box">
+            <h5 class="title">芝麻信用认证</h5>
+            <p class="list-text">芝麻积分</p>
           </div>
-          <div class="item-message">
-            <img class="more" src="../../image/wode/more.png">
-            <span class="status" id="flag-3">待认证</span>
-          </div>
+          <img class="more" src="../../image/wode/more.png">
+          <span class="status" id="flag-3">待认证</span>
         </li>
         <li id="step-4">
           <img class="icon" src="../../image/wode/operator.png">
-          <div class="item-box">
-            <h5 class="item-title">运营商认证</h5>
-            <p class="item-list-text">运营商信息认证</p>
+          <div class="box">
+            <h5 class="title">运营商认证</h5>
+            <p class="list-text">运营商信息认证</p>
           </div>
-          <div class="item-message">
-            <img class="more" src="../../image/wode/more.png">
-            <span class="status" id="flag-4">待认证</span>
-          </div>
+          <img class="more" src="../../image/wode/more.png">
+          <span class="status" id="flag-4">待认证</span>
         </li>
       </ul>
     </div>
     <div class="selectable hide">
       <div class="selecthead">
-        <div class="select-img">
-          <img class="border" src="../../image/wode/border.png">
-        </div>
-        <div class="select-box">
-          <p class="select">可选认证</p>
-          <span class="fullmessage">请完整填写以下信息</span>
-        </div>
+        <img class="border" src="../../image/wode/border.png">
+        <p class="select">可选认证</p>
+        <span class="fullmessage">请完整填写以下信息</span>
       </div>
     </div>
-    <script type="text/javascript" charset="utf-8" src="../../script/global/api.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../../script/component/base.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../../script/global/request.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../../script/global/request-status.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../../script/global/event.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../../script/global/listen.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../../script/component/router.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../../script/global/urls.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../../script/component/other/toggleBtnDisabled.js"></script>
-    <script>
-      var goal, User;
-      var page = ['gerenxinxi', 'lianxiren', 'zhimafen', 'yunyingshang'];
-      apiready = function () {
-        setListenr();
-        init();
-      }
+    <div class="ullist hide">
+      <ul>
+        <li id="step-5">
+          <img class="icon" src="../../image/wode/alipay.png">
+          <div class="box">
+            <h5 class="title">支付宝</h5>
+            <p class="list-text">支付宝认证</p>
+          </div>
+          <img class="more" src="../../image/wode/more.png">
+          <span class="status" id="flag-5">待认证</span>
+        </li>
+        <li id="step-6">
+          <img class="icon" src="../../image/wode/jdlogo.png">
+          <div class="box">
+            <h5 class="title">京东</h5>
+            <p class="list-text">京东认证</p>
+          </div>
+          <img class="more" src="../../image/wode/more.png">
+          <span class="status" id="flag-6">待认证</span>
+        </li>
+      </ul>
+    </div>
 
-      function init() {
-        if (!checkNet() || !checkLogin()) return;
-        request({
-          url: 'Certification',
-          data: {
-            sj: User.Phone,
-            deviceId: api.deviceId
-          },
-          operation: {
-            toast: false,
-            success: function (data) {
-              render(data.HYXX);
-            }
+    <div class="selectable hide">
+      <div class="selecthead">
+        <img class="border" src="../../image/wode/border.png">
+        <p class="select">可选认证</p>
+        <span class="fullmessage">请完整填写以下信息</span>
+      </div>
+      <div class="select-content">
+        <ul>
+          <li>
+            <img class="icon" src="../../image/wode/alipay.png">
+            <p>支付宝</p>
+            <img class="remain" src="../../image/wode/remain.png">
+          </li>
+          <li class="jd">
+            <img class="icon" src="../../image/wode/jdlogo.png">
+            <p>京东</p>
+            <imgclass="remain" src="../../image/wode/remain.png">
+          </li>
+          <li>
+            <img class="icon" src="../../image/wode/chsi.png">
+            <p>学信网</p>
+            <img class="remain" src="../../image/wode/remain.png">
+          </li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <script type="text/javascript" charset="utf-8" src="../../script/global/api.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../script/component/base.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../script/global/request.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../script/global/request-status.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../script/global/event.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../script/global/listen.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../script/component/router.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../script/global/urls.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../script/component/other/toggleBtnDisabled.js"></script>
+  <script>
+    var goal, User;
+    var page = ['gerenxinxi', 'lianxiren', 'zhimafen', 'yunyingshang'];
+    apiready = function () {
+      setListenr();
+      init();
+    }
+
+    function init() {
+      if (!checkNet() || !checkLogin()) return;
+      request({
+        url: 'Certification',
+        data: {
+          sj: User.Phone,
+          deviceId: api.deviceId
+        },
+        operation: {
+          toast: false,
+          success: function (data) {
+            render(data.HYXX);
           }
-        });
-      }
-
-      function render(data) {
-        for (let i = 1; i < 5; i++) {
-          try {
-            (function (i) {
-              $api.removeAttr('step-' + i, 'onclick');
-            })(i);
-          } catch (error) {}
         }
-        var stepArr = [false, false, false, false];
-        if (!!(data.IsCertification * 1)) stepArr[0] = true;
-        if (!!(data.IsTxl * 1)) stepArr[1] = true;
-        if (!!(data.IsZhiMa * 1)) stepArr[2] = true;
-        if (!!(data.IsOperator * 1)) stepArr[3] = true;
-        saveCertification(stepArr);
-        var index = false;
-        for (var i = 0; i < 4; i++) {
-          if (stepArr[i]) {
-            $api.text('flag-' + (i + 1), '已认证');
-          } else if (!index) {
-            index = i + 1;
-          }
+      });
+    }
+
+    function render(data) {
+      for (let i = 1; i < 5; i++) {
+        try {
+          (function (i) {
+            $api.removeAttr('step-' + i, 'onclick');
+          })(i);
+        } catch (error) {}
+      }
+      var stepArr = [false, false, false, false];
+      if (!!(data.IsCertification * 1)) stepArr[0] = true;
+      if (!!(data.IsTxl * 1)) stepArr[1] = true;
+      if (!!(data.IsZhiMa * 1)) stepArr[2] = true;
+      if (!!(data.IsOperator * 1)) stepArr[3] = true;
+      saveCertification(stepArr);
+      var index = false;
+      for (var i = 0; i < 4; i++) {
+        if (stepArr[i]) {
+          $api.text('flag-' + (i + 1), '已认证');
+        } else if (!index) {
+          index = i + 1;
         }
-        if (index > 0) {
-          goal = page[index - 1];
-          $api.attr('step-' + index, 'onclick', 'authentication(\'' + goal + '\')');
+      }
+      if (index > 0) {
+        goal = page[index - 1];
+        $api.attr('step-' + index, 'onclick', 'authentication(\'' + goal + '\')');
+      }
+    }
+
+    function authentication(goal) {
+      create({
+        goal: 'renzheng',
+        aim: goal,
+        step: page.indexOf(goal) + 1
+      });
+    }
+
+    function saveCertification(data) {
+      User = $api.getStorage('User');
+      User.Certification = data;
+      $api.setStorage('User', User);
+    }
+
+    function setListenr() {
+      loginEventListener();
+      logoutEventListener();
+      offlineEventListener();
+      api.addEventListener({
+          name: 'CLOSE-STEP-EVENT'
+        },
+        function () {
+          init();
         }
-      }
-
-      function authentication(goal) {
-        create({
-          goal: 'renzheng',
-          aim: goal,
-          step: page.indexOf(goal) + 1
-        });
-      }
-
-      function saveCertification(data) {
-        User = $api.getStorage('User');
-        User.Certification = data;
-        $api.setStorage('User', User);
-      }
-
-      function setListenr() {
-        loginEventListener();
-        logoutEventListener();
-        offlineEventListener();
-        api.addEventListener({
-            name: 'CLOSE-STEP-EVENT'
-          },
-          function () {
-            init();
-          }
-        );
-        api.addEventListener({
-            name: 'CHANGE-STEP-EVENT'
-          },
-          function () {
-            init();
-          }
-        );
-      }
-    </script>
+      );
+      api.addEventListener({
+          name: 'CHANGE-STEP-EVENT'
+        },
+        function () {
+          init();
+        }
+      );
+    }
+  </script>
 </body>
 
 </html>

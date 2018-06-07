@@ -17,19 +17,20 @@
     <img class="back" src="../../image/common/back.png" onclick="javascript: kill();">
     <p class="header-title">退款</p>
   </header>
-  <div class="refund-content">
-    <div class="item-money">
-      <p class="item-sum">应退金额</p>
-      <span class="item-price" id="price"></span>
-    </div>
-    <div class="item-select">
-      <div class="item-select-message">
-        <p>选择退款方式</p>
+  <div class="content">
+    <div class="money">
+      <p class="sum">应退金额</p>
+      <span class="price" id="price">500</span>
+      <div class="explain">
+        <img src="../../image/wode/help.png">
+        <span class="explain-text">说明</span>
       </div>
     </div>
-    <div class="item-bank">
-      <ul class="item-banklist" id="list">
-      </ul>
+    <div class="select">
+      <p>选择退款方式</p>
+    </div>
+    <div class="bank">
+      <ul class="banklist" id="list"></ul>
     </div>
   </div>
   </div>
@@ -48,9 +49,8 @@
     var User = null;
     var index = -1;
     var previewDom = null;
-    var flag = 0;
+
     apiready = function () {
-      flag = api.pageParam.flag;
       setListener();
       init();
     }
@@ -67,11 +67,7 @@
         operation: {
           toast: false,
           success: function (data) {
-            if(flag == 1){ // 退款
-              $api.text('price', (data.JinE * 1 + data.FeiYong / data.QiXian).toFixed(2));
-            }else if(flag == 2){ // 展期
-              $api.text('price',  (data.FeiYong / data.QiXian).toFixed(2));
-            }
+            $api.text('price', data.JinE);
           }
         }
       });
@@ -119,7 +115,7 @@
       }
       $api.html('list', htmlStr);
     }
-
+    
     function select(_this) {
       if (previewDom) $api.attr('select-' + index, 'xlink:href', '#icon-btn-selected');
       index = $api.attr(_this, 'data-index');
@@ -137,17 +133,16 @@
       create({
         goal: 'pay',
         card: User.Card[index].KaHao,
-        phone: User.Card[index].YLShouJiHao,
-        flag :flag
+        phone: User.Card[index].YLShouJiHao
       });
     }
 
     function setListener() {
-      loginEventListener();
+      loginEventListener();     
       logoutEventListener(function () {
         kill();
       });
-      offlineEventListener();
+ offlineEventListener();
     }
 
     function setHtmlStr(card, i) {

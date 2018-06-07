@@ -11,25 +11,22 @@
 
 <body>
   <header class="header">
-    <img src="../../image/common/back.png" class="back" id="kill-btn" onclick="javascript: kill();">
+    <img src="../../image/common/back.png" alt="" class="back" id="kill-btn" onclick="javascript: kill();">
     <p class="header-title">手机报价</p>
   </header>
   <div class="banner">
-      <div class="banner-img">
-        <img src="../../image/home/quote-banner.png">
-      </div>
+    <img src="../../image/home/quote-banner.png" alt="">
     <div class="bannerText">
       <p class="message">
         <span>您的手机</span>
         <span id="type">iphone 6s</span>
         <span>估价</span>
       </p>
-      <div class="price">
-        <h3 class="money">
-          <span>￥</span>
-          <span id="money">1000</span>
-        </h3>
-      </div>
+      <h3 class="money">
+        <span>￥</span>
+        <span id="money">1000</span>
+      </h3>
+      <!-- <span class="anew" id="valuation" onclick="init()">重新估价></span> -->
     </div>
   </div>
   <div class="load hide" id="loading">
@@ -38,12 +35,9 @@
   <div class="details">
     <div class="rules">
       <div class="ruleshead">
-        <div class="rule-icon">
-          <img src="../../image/home/flow.png">
-        </div>
-        <div class="rule-head-title">
-          <p class="rules-title">反悔/撤销</p>
-        </div>
+        <img src="../../image/home/flow.png">
+        <p class="rules-title">反悔/撤销</p>
+        <div class="clear"></div>
       </div>
       <div class="rules-text">
         用户根据手机实际状况填写确认手机检测评估信息后， 根据平台提供的报价决定是否进行出售;若用户确定出手的,用户需根据 平台要求平台签订相关交易文本,用户操作完成后, 平台即刻向用户支付一定比例的定金及预付款;待平台实际收到用户手机并 验收通过后向用户支付尾款部分。
@@ -51,13 +45,10 @@
     </div>
     <div class="rules">
       <div class="ruleshead">
-        <div class="rule-icon">
-          <img src="../../image/home/repeal.png">
-        </div>
-        <div class="rule-head-title">
-          <p class="rules-title">出售流程</p>
-        </div>
+        <img src="../../image/home/repeal.png" alt="">
+        <p class="rules-title">出售流程</p>
       </div>
+      <div class="clear"></div>
       <div class="rules-text">
         用户在与平台签订《手机回收合同》并收到平台支付款项后拥有7个 自然日的履约期,履约期内用户可选择撤销出售手机,解除原合同, 但应向平台退回预付款并双倍返还定金。
       </div>
@@ -69,8 +60,8 @@
           <svg class="icon" aria-hidden="true">
             <use id="select" xlink:href="#icon-btn-selected"></use>
           </svg>
-          <p>我阅读并理解</p>
-          <span onclick="javascript:create('protocol')"><span>《</span>手机合同<span>》</span></span>
+          我阅读并理解
+          <span onclick="javascript:create('protocol')">《手机合同》</span>
         </label>
       </div>
     </div>

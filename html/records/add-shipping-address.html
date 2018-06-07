@@ -18,38 +18,22 @@
   </header>
   <div class="content">
     <ul class="address-list-compile">
-      <li class="item-address-list">
-        <div class="item-address-text">
-          <span class="item-address-text">收件人:</span>
-        </div>
-        <div class="input-group">
-          <input type="text" id="name" placeholder="请填写收件人姓名" class="name">
-        </div>
+      <li class="address-list-item">
+        收件人:
+        <input type="text" id="name" placeholder="请填写收件人姓名" class="name">
       </li>
-      <li class="item-address-list">
-        <div class="item-address-text">
-          <span class="item-address-text">电话号码:</span>
-        </div>
-        <div class="input-group">
-          <input type="number" id="phone" placeholder="请填写手机号码" maxlength="11">
-        </div>
+      <li class="address-list-item">
+        电话号码:
+        <input type="number" id="phone" placeholder="请填写手机号码" maxlength="11">
       </li>
       <li onclick="javascript: selectCity();">
-        <div class="item-address-text">
-          <span class="item-address-text">当前住址:</span>
-        </div>
-        <div class="input-group">
-          <input id="city" placeholder="请选择省、市、区" type="text" readonly="readonly">
-        </div>
+        当前住址:
+        <input id="city" placeholder="请选择省、市、区" type="text" readonly="readonly">
         <img class="more" src="../../image/records/more.png" id="more">
       </li>
-      <li class="item-address-list">
-        <div class="item-address-text">
-          <span class="item-address-text">详细地址:</span>
-        </div>
-        <div class="input-group">
-          <input id="address-detail" type="text" placeholder="填写街道、楼盘号等">
-        </div>
+      <li class="address-list-item">
+        详细地址:
+        <input id="address-detail" type="text" placeholder="填写街道、楼盘号等">
       </li>
     </ul>
   </div>

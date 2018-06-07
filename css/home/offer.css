@@ -187,6 +187,8 @@ header .header-title {
 }
 
 .details .rules .rules-title {
+  float: left;
+  margin-left: 2.66667vw;
   color: #333;
   font-size: 4vw;
 }
@@ -194,7 +196,6 @@ header .header-title {
 .details .rules img {
   width: 5.46667vw;
   height: 5.06667vw;
-  margin-right: 2.66667vw;
   float: left;
 }
 

@@ -20,6 +20,7 @@
         <span>*</span>请描述您遇到的问题
       </p>
     </div>
+
     <textarea class="describe-content" id="textarea"></textarea>
     <div class="quantity">
       <p class="quantity-number">
@@ -29,13 +30,9 @@
       </p>
     </div>
   </div>
-  <div class="tip">
-    <p class="hide" id="msg">您的字数已超过200</p>
-  </div>
-  <div class="input-group">
-    <input type="text" placeholder="手机号/邮箱 (选填, 方便我们联系您)" class="information" id="account">
-    <div class="btn" onclick="javascript:submit();" id="submit-btn">提交</div>
-  </div>
+  <p class="hide" id="msg">您的字数已超过200</p>
+  <input type="text" placeholder="手机号/邮箱 (选填, 方便我们联系您)" class="information" id="account">
+  <div class="btn" onclick="javascript:submit();" id="submit-btn">提交</div>
   <script type="text/javascript" charset="utf-8" src="../../script/global/api.js"></script>
   <script type="text/javascript" charset="utf-8" src="../../script/component/base.js"></script>
   <script type="text/javascript" charset="utf-8" src="../../script/global/urls.js"></script>

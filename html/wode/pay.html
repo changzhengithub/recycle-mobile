@@ -42,17 +42,11 @@
 
     function setListener() {
       offlineEventListener();
-    };
-
-    var mark = 0;
-    $api.byId('iframe').onload = function(){
-      mark++;
-      alert(mark)
     }
 
     function init() {
       if (!checkNet() && !checkLogin()) return;
-      var url = RequestProductURL['Refund'] + "?sj=" + api.pageParam.phone + "&&yhk=" + api.pageParam.card + "&flag="+api.pageParam.flag;
+      var url = RequestProductURL['Refund'] + "?sj=" + api.pageParam.phone + "&&yhk=" + api.pageParam.card;
       $api.attr('iframe', 'src', url);
     }
   </script>

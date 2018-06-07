@@ -25,10 +25,8 @@
         <div onclick="javascript: gotoPage('login');">登陆</div>
         <div onclick="javascript: gotoPage('register');">注册</div>
       </div>
-      <div class="user">
-        <p class="hide account" id="phone"></p>
-        <p class="hide account" id="account"></p>
-      </div>
+      <p class="hide account" id="phone"></p>
+      <p class="hide account" id="account"></p>
     </div>
   </header>
   <ul class="list" id="list">
@@ -40,9 +38,7 @@
       </div>
       <div class="list-message">
         <p class="item-content">我的资料</p>
-        <div class="item-img">
-          <img class="more" src="../../image/wode/more.png">
-        </div>
+        <img class="more" src="../../image/wode/more.png">
       </div>
     </li>
     <li class="list-item" onclick="javascript: gotoPage('recycling-records');">
@@ -53,9 +49,7 @@
       </div>
       <div class="list-message">
         <p class="item-content">回收记录</p>
-        <div class="item-img">
-          <img class="more" src="../../image/wode/more.png">
-        </div>
+        <img class="more" src="../../image/wode/more.png">
       </div>
     </li>
     <li class="list-item" onclick="javascript: gotoPage('bank-card');">
@@ -66,9 +60,7 @@
       </div>
       <div class="list-message">
         <p class="item-content">我的收款卡</p>
-        <div class="item-img">
-          <img class="more" src="../../image/wode/more.png">
-        </div>
+        <img class="more" src="../../image/wode/more.png">
       </div>
     </li>
     <li class="list-item" onclick="javascript: gotoPage('shipping-address');">
@@ -79,9 +71,7 @@
       </div>
       <div class="list-message">
         <p class="item-content">我的收货地址</p>
-        <div class="item-img">
-          <img class="more" src="../../image/wode/more.png">
-        </div>
+        <img class="more" src="../../image/wode/more.png">
       </div>
     </li>
     <li class="list-item" onclick="javascript: gotoPage('help-center');">
@@ -92,9 +82,7 @@
       </div>
       <div class="list-message">
         <p class="item-content">帮助中心</p>
-        <div class="item-img">
-          <img class="more" src="../../image/wode/more.png">
-        </div>
+        <img class="more" src="../../image/wode/more.png">
       </div>
     </li>
     <li class="list-item" onclick="javascript: gotoPage('feedback');">
@@ -105,9 +93,7 @@
       </div>
       <div class="list-message">
         <p class="item-content">意见反馈</p>
-        <div class="item-img">
-          <img class="more" src="../../image/wode/more.png">
-        </div>
+        <img class="more" src="../../image/wode/more.png">
       </div>
     </li>
     <li class="list-item" onclick="javascript: contact();">
@@ -118,9 +104,7 @@
       </div>
       <div class="list-message">
         <p class="item-content">联系客服</p>
-        <div class="item-img">
-          <img class="more" src="../../image/wode/more.png">
-        </div>
+        <img class="more" src="../../image/wode/more.png">
       </div>
     </li>
   </ul>
@@ -156,7 +140,7 @@
       if (!checkNet() && !checkLogin()) return;
       User = $api.getStorage('User');
       // alert(api.deviceId)
-      //  console.log(api.deviceId);
+//  console.log(api.deviceId);
       request({
         url: 'GetConfig',
         data: {

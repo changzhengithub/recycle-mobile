@@ -13,7 +13,7 @@
 
 <body>
   <header class="header">
-    <img src="../../image/common/back.png" class="back" onclick="javascript: create('home');">
+<img src="../../image/common/back.png" class="back" onclick="javascript: create('home');">
     <p class="header-title">回收进度</p>
   </header>
   <div class="order-list">
@@ -27,25 +27,19 @@
           </p>
         </div>
         <div class="phone-price">
-          <ul class="price-list">
-            <li class="list-item">
-              <div class="item-box">
-                <p>手机估价</p>
-                <span id="money"></span>
-              </div>
+          <ul>
+            <li>
+              <p>手机估价</p>
+              <span id="money"></span>
             </li>
-            <li class="list-item">
-              <div class="item-box">
-                <p>定金+预付款</p>
-                <span id="total"></span>
-              </div>
+            <li>
+              <p>定金+预付款</p>
+              <span id="total"></span>
             </li>
-            <li class="list-item">
-              <div class="item-box">
-                <p>履约天数</p>
-                <span id="deadline"></span>
-                <span>天</span>
-              </div>
+            <li>
+              <p>履约期</p>
+              <span id="deadline"></span>
+              <span>天</span>
               <img class="help" src="../../image/records/help.png" onclick='javascript:showDialog();'>
             </li>
           </ul>
@@ -56,7 +50,7 @@
   <div id="scheduleList">
     <div class="records-details-status">
       <div class="order-content">
-        <ul id="schedule-list">
+        <ul id="order-list">
           <li class="order-list-item bodrenone">
             <ul>
               <li class="currentstatus" id="currentStatus"></li>
@@ -87,10 +81,10 @@
       </div>
       <div class="btn hide" onclick="javascript:cancel();" id="cancel">不卖了</div>
       <div class="btn hide" onclick="javascript:confirm();" id="confirm">确定卖出填写寄回信息</div>
-      <div class="btn hide" onclick="javascript:renewal();" id="renewal">申请展期</div>
       <div class="btn hide" onclick="javascript:contact();" id="contact">联系客服</div>
     </div>
   </div>
+
   <div class="mark hide" id="mark">
     <div class="dialog">
       <p class="d-head">履约期</p>
@@ -119,13 +113,12 @@
       $api.text('phone-type', api.deviceModel);
       if (!checkNet() || !checkLogin()) return;
       init();
-
+      
     }
 
     // 获取记录
     function init() {
       var User = $api.getStorage('User');
-      console.log(User.Phone)
       request({
         url: 'GetZXJD',
         data: {
@@ -146,19 +139,18 @@
     };
 
     function setHtmltitle(data) {
-      $api.text('period', data.TrackDays);
+      $api.text('period', data.DaoQiTianShu);
       var html = '';
       var price = null,
         contact = false, // 联系客服
         allno = false, // 什么按钮也没有
         other = false, // 不卖了 联系客服
         alung = false; // 确定卖出  不卖了
-        nosell = false;
       switch (Number(data.ZhuangTai)) {
         case 0: //待审核
           allno = true;
           break;
-        case 1: //审核不通过
+        case 1: //审核不通过  
           allno = true;
           break;
         case 2: //待放款
@@ -166,13 +158,11 @@
           break;
         case 3: //已放款
           other = true;
-          nosell = true;
           break;
         case 4: //已逾期
           other = true;
-          nosell = true;
           break;
-        case 5: //已还款
+        case 5: //已还款          
           allno = true;
           break;
         case 6: //已交催收
@@ -220,22 +210,18 @@
         $api.removeCls('cancel', 'hide');
         $api.removeCls('confirm', 'hide');
       };
-      if(nosell){
-        $api.removeCls('renewal', 'hide');
-      }
-      $api.text('money', data.ShenQingJine + '元');
-
-      $api.text('total', (data.JinE*1 + (data.FeiYong*1 / data.QiXian*1)).toFixed(2) + '元');
-      $api.text('deadline',  data.LvYueTianShu);
+      $api.text('money', data.ShenQingJine + '.00元');
+      $api.text('total', data.JinE + '.00元');
+      $api.text('deadline', data.QiXian);
       $api.text('currentStatus', data.ZT);
       $api.text('orderTime', data.JieKuanShiJian);
-      $api.text('period',data.QiXian);
+      $api.text('period', data.TrackDays);
       $api.removeCls('footer', 'hide');
     };
 
     function confirm() {
       create('add-recycle-address');
-    };
+    }
 
 
     function contact() {
@@ -262,19 +248,7 @@
 
 
     function cancel() {
-      create({
-        goal: 'refund',
-        flag: '1'
-      });
-      kill();
-    };
-
-    function renewal() {
-      create({
-        goal: 'refund',
-        flag: '2'
-      });
-      kill();
+      create('refund');
     }
 
     function showDialog() {

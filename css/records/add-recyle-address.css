@@ -138,10 +138,6 @@ header .compile {
 .content ul li{
   padding-top: 5vw;
   font-size: 4.266666666666667vw;
-  display: flex;
-  display: -webkit-flex;
-  align-content: center;
-  align-items: center;
 }
 
 .content ul li input{
@@ -178,8 +174,4 @@ header .compile {
   border: none;
   outline: none;
   text-align: center;
-}
-
-.clear{
-  clear: both
 }

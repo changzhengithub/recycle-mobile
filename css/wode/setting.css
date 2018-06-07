@@ -129,15 +129,15 @@ header .compile {
   color: #333;
 }
 
-.setting-content {
+.content {
   margin-top: 2.66667vw;
 }
 
-.setting-content .setting {
+.content .setting {
   background: #fff;
 }
 
-.setting-content .setting li {
+.content .setting li {
   width: 96vw;
   height: 13.33333vw;
   border-bottom: 1px solid #efefef;
@@ -145,12 +145,12 @@ header .compile {
   line-height: 13.33333vw;
 }
 
-.setting-content .setting li .setlist {
+.content .setting li .setlist {
   font-size: 4.66667vw;
   float: left;
 }
 
-.setting-content .setting li img {
+.content .setting li img {
   float: right;
   margin-top: 4.66667vw;
   width: 2.13333vw;
@@ -158,7 +158,7 @@ header .compile {
   margin-right: 4vw;
 }
 
-.setting-content .setting li:last-child {
+.content .setting li:last-child {
   border-bottom: 0;
 }
 

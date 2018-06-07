@@ -12,30 +12,26 @@
 <body>
 
   <header class="header">
-    <img src="../../image/home/person.png" class="person" onclick="javascript: create('personal-center');">
+    <img src="../../image/home/person.png" alt="" class="person" onclick="javascript: create('personal-center');">
     <p class="h-title">趣回收</p>
   </header>
+  <!-- <div class="message">
+            <img src="./img/trumpet.png" alt="" class="trumpet">
+            <p class="m-list">用户尾号860刚刚卖出一部iphone 6s获得1500元</p>
+    </div> -->
   <div class="container">
     <div class="banner">
-      <div class="banner-img">
-        <img class="banner-img" src="../../image/home/banner.png">
-      </div>
-      <div class="banner-text">
-        <div class="banner-img-text">
-          <img class="safe" src="../../image/home/safe.png">
-        </div>
-        <div class="banner-message">
-          <p class="order-text">在线下单 评估无需等待</p>
-        </div> 
+      <img class="banner-img" src="../../image/home/banner.png">
+      <div class="bannerText">
+        <img class="safe" src="../../image/home/safe.png">
+        <p class="order-text">在线下单 评估无需等待</p>
       </div>
     </div>
     <div class="content">
       <div class="phone-type">
-        <div class="mark-img">
-          <img class="markimg" src="../../image/home/lefticon.png">
-          <p class="head-title"> 您的手机型号</p>
-          <img class="markimg" src="../../image/home/righticon.png">
-        </div>
+        <img class="markimg" src="../../image/home/lefticon.png">
+        <p class="head-title"> 您的手机型号</p>
+        <img class="markimg" src="../../image/home/righticon.png">
       </div>
       <div class="phone-content">
         <img class="phone-img" src="../../image/home/phone.png">
@@ -43,25 +39,21 @@
           <p class="messagelist" id="device-model"></p>
           <p class="messagelist" id="system"></p>
           <p class="messagelist" id="device-name"></p>
-          <p class="messagelist"><span class="maxback-price">最高回收:</span>￥5000
-          </p>
+          <p class="messagelist">
+            <span class="MaxBackPrice">最高回收:</span>￥5000</p>
         </div>
       </div>
       <div class="phone-btn" id="phone-btn" onclick="javascript: gotoPage();">马上评估 立即拿钱</div>
     </div>
     <footer class="recycle">
-      <div class="title">
-        <p class="recycle-title">回收流程</p>
-      </div>
-      <div class="recycle-icon">
+      <p class="recycle-title">回收流程</p>
+      <div class="recycleicon">
         <ul class="recycle-list">
           <li class="list-item">
             <div class="item-bg">
               <img src="../../image/home/evaluate.png">
             </div>
-            <div class="item-describe">
-              <p class="item-message">旧机估价</p>
-            </div>
+            <p class="item-message">旧机估价</p>
           </li>
           <li class="list-arrow">
             <img class="arrow" src="../../image/home/than.png">
@@ -70,9 +62,7 @@
             <div class="item-bg">
               <img src="../../image/home/order.png">
             </div>
-            <div class="item-describe">
-              <p class="item-message">在线出售</p>
-            </div>
+            <p class="item-message">在线出售</p>
           </li>
           <li class="list-arrow">
             <img class="arrow" src="../../image/home/than.png">
@@ -81,9 +71,7 @@
             <div class="item-bg">
               <img src="../../image/home/icon.png">
             </div>
-            <div class="item-describe">
-              <p class="item-message">7天反悔期</p>
-            </div>
+            <p class="item-message">7天反悔期</p>
           </li>
           <li class="list-arrow">
             <img class="arrow" src="../../image/home/than.png">
@@ -92,9 +80,7 @@
             <div class="item-bg">
               <img src="../../image/home/checkout.png">
             </div>
-            <div class="item-describe">
-              <p class="item-message">销售本机</p>
-            </div>
+            <p class="item-message">销售本机</p>
           </li>
         </ul>
       </div>
@@ -183,15 +169,9 @@
         operation: {
           toast: false,
           success: function (data) {
+
             setStatus(data);
-            if(page == 'refund'){
-              create({
-                goal:page,
-                flag:1
-              });
-            }else{
-              create(page);
-            }
+            create(page);
           }
         }
       });
@@ -234,7 +214,7 @@
           page = 'recycling-schedule';
           text = '查看详情';
           break;
-        case 1: //审核不通过     
+        case 1: //审核不通过
           page = 'offer';
           break;
         case 2: //待放款

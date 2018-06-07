@@ -18,9 +18,9 @@
   </ul>
   <div class="mark hide" id="mark">
     <div class="dialog">
-        <p class="d-head">履约天数</p>
+        <p class="d-head">履约期</p>
         <div class="details">
-          履约天数: 指用户确认以评估价格出卖手机后与平台签订的《手机合同》
+          履约期: 指用户确认以评估价格出卖手机后与平台签订的《手机合同》
           内约定的交付手机的实际交付期限,用户应当在交付期限内将手机实际寄送至
           平台指定地址
         </div>
@@ -94,15 +94,15 @@
         "<ul>" +
         "<li>" +
         "<p>手机估价</p>" +
-        "<span>" + data.ShenQingJine + "元</span>" +
+        "<span>" + (price = data.DaoZhang ? data.DaoZhang : data.ShenQingJine) + ".00元</span>" +
         "</li>" +
         "<li>" +
         "<p>定金+预付款</p>" +
-        "<span>" + (data.DaoZhang*1 + (data.FeiYong*1 / data.QiXian*1)).toFixed(2) + "元</span>" +
+        "<span>" + (price * 1 + data.FeiYong * 1) + ".00元</span>" +
         "</li>" +
         "<li>" +
-        "<p>履约天数</p>" +
-        "<span>" + data.LvYueTianShu + "</span>" +
+        "<p>履约期</p>" +
+        "<span>" + data.QiXian + "</span>" +
         "<span>天</span>" +
         "<img src='../../image/records/help.png' class='help' onclick='javascript:showDialog();'>" +
         "</li>" +
